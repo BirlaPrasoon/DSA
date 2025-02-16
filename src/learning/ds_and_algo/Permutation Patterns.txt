@@ -1,0 +1,25 @@
+There are three main types of interview questions about permutations:
+
+Generate all permutations.
+Generate next permutation.
+Generate the permutation number k (current problem).
+
+If the order of generated permutations is not important, one could use "swap" backtracking to solve the first problem and to generate all N! permutations in O(N×N!) time.
+
+Although, it is better to generate permutations in lexicographically sorted order using D.E. Knuth algorithm. This algorithm generates a new permutation from the previous one in O(N) time. The same algorithm could be used to solve the second problem above.
+
+The problem number three is where the fun starts because the above two algorithms do not apply:
+
+You will be asked to fit into polynomial time complexity, i.e. no backtracking.
+
+The previous permutation is unknown, i.e. you cannot use the D.E. Knuth algorithm.
+
+To solve the problem, one could use a pretty elegant idea that is based on the mapping. It's much easier to generate numbers than combinations or permutations.
+
+So let us generate numbers, and then map them to combinations/subsets/permutations.
+
+This sort of encoding is widely used in password-cracking algorithms.
+
+For example, in a previous article we discussed how one could map a subset with a binary bitmask of length N, where ith 0 means "the element number i is absent" and ith 1 means "the element number i is present".
+
+One could do the same for permutations, mapping permutation with the integer in Factorial Number System Representation.

@@ -1,0 +1,40 @@
+{
+  "score": {
+    "grade": "A-",
+    "grade_headline": "Your Resume is Great",
+    "grade_blurb": "Congratulations.  Your resume compares with the best resumes our experts graded.  It vividly tells the story of your work history, provides just enough details, and effectively communicates your value.",
+    "percentile": "90",
+    "percentile_suffix": "th",
+    "brevity_score": "94",
+    "impact_score": "72",
+    "depth_score": "99",
+    "email": "birla.prasoon1@gmail.com.com",
+    "phone": "1 9560046675",
+    "job_keywords": "        "
+  },
+  "industry": {
+    "first_industry_match": "Computer/Internet",
+    "first_industry_conf": "76",
+    "second_industry_match": "Engineering/Architecture",
+    "second_industry_conf": "60.1",
+    "third_industry_match": "Manufacturing/Mechanical",
+    "third_industry_conf": "15"
+  },
+  "advice": {
+    "tip": {
+      "short": {
+        "a": {
+          "": "Focus on achievements instead of responsibilities. ",
+          "i": {
+            "class": "fa fa-question-circle"
+          }
+        }
+      },
+      "long": "You can improve your resume by using more exciting language to hype your accomplishments."
+    }
+  },
+  "scores": [
+    "90",
+    "90"
+  ]
+}

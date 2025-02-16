@@ -1,0 +1,55 @@
+package leetcode.problems.google.hard.dp;
+
+import leetcode.TreeNode;
+
+public class BinaryTreeMaximumPathSum {
+
+
+    class Solution {
+        public int maxPathSum(TreeNode root) {
+            MaxPathSum maxPathSum = new MaxPathSum();
+            gainFromSubtree(root, maxPathSum);
+            return maxPathSum.maxSum;
+        }
+
+        static class MaxPathSum {
+            private int maxSum;
+            MaxPathSum() {
+                maxSum = Integer.MIN_VALUE;
+            }
+            void updateMax(int x) {
+                if(x > maxSum) maxSum = x;
+            }
+
+            int getMaxSum() {
+                if(maxSum == Integer.MIN_VALUE){
+                    return -1;
+                }
+                return maxSum;
+            }
+        }
+
+        // post order traversal of subtree rooted at `root`
+        private int gainFromSubtree(TreeNode root, MaxPathSum maxPathSum) {
+            if (root == null) {
+                return 0;
+            }
+
+            // add the path sum from left subtree. Note that if the path
+            // sum is negative, we can ignore it, or count it as 0.
+            // This is the reason we use `Math.max` here.
+            int gainFromLeft = Math.max(gainFromSubtree(root.left, maxPathSum), 0);
+
+            // add the path sum from right subtree. 0 if negative
+            int gainFromRight = Math.max(gainFromSubtree(root.right, maxPathSum), 0);
+
+            // if left or right path sum are negative, they are counted
+            // as 0, so this statement takes care of all four scenarios
+            maxPathSum.updateMax(gainFromRight + gainFromRight + root.val);
+
+            // return the max sum for a path starting at the root of subtree
+            return Math.max(gainFromLeft + root.val, gainFromRight + root.val);
+        }
+    }
+
+}

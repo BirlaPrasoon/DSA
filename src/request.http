@@ -1,0 +1,36 @@
+###
+
+# curl --location 'https://job-ready-app-image.onrender.com/api/v1/resume/upload'
+#--form 'file=@"./Prasoon Resume 2024.pdf"'
+#--form 'name="Prasoon Birla"'
+#--form 'email="birla.prasoon1@gmail.com"'
+#--form 'phone="7417735248"'
+#
+#--form 'college="LNMIIT"'
+POST https://job-ready-app-image.onrender.com/api/v1/resume/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="Prasoon Resume 2024.pdf""
+
+< "./Prasoon Resume 2024.pdf"
+--WebAppBoundary
+Content-Disposition: form-data; name="name"
+
+"Prasoon Birla"
+--WebAppBoundary
+Content-Disposition: form-data; name="email"
+
+"birla.prasoon1@gmail.com"
+--WebAppBoundary
+Content-Disposition: form-data; name="phone"
+
+"7417735248"
+--WebAppBoundary
+Content-Disposition: form-data; name="college"
+
+"LNMIIT"
+--WebAppBoundary--
+
+###
+
